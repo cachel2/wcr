@@ -23,3 +23,17 @@ fn main() -> std::io::Result<()> {
     }
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+
+    use super::*;
+
+    #[test]
+    fn test_input() {
+        let input = "first \nsecond \n third\n";
+        let reader = input.as_bytes();
+        let result = count_lines(reader).unwrap();
+        assert_eq!(result, 3);
+    }
+}
